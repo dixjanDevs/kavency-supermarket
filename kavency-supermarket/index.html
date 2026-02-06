@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavency Super Market - Fresh Groceries in Lusaka</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+    <!-- Top Header -->
+    <div class="top-header">
+        <div class="top-header-container">
+            <div class="top-header-links">
+                <a href="#"><i class="fas fa-phone"></i> +260 211 123456</a>
+                <a href="#"><i class="fas fa-envelope"></i> info@kavency.co.zm</a>
+                <a href="#"><i class="fas fa-clock"></i> Mon-Sun: 7:00 AM - 9:00 PM</a>
+            </div>
+            <div class="top-header-links">
+                <a href="#" onclick="showSection('specials')"><i class="fas fa-tag"></i> Specials</a>
+                <a href="#" onclick="showSection('location')"><i class="fas fa-map-marker-alt"></i> Store Location</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="#" class="logo" onclick="showSection('home')">
+                <div class="logo-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>KAVENCY<span>SUPERMARKET</span></h1>
+                    <p>Fresh Groceries in Lusaka</p>
+                </div>
+            </a>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search products available..." id="searchInput">
+                    <button class="search-btn" onclick="performSearch()">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="#" class="action-btn" onclick="showSection('location')">
+                    <div class="action-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <span class="action-text">Location</span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="nav-container">
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#" class="nav-link active" onclick="showSection('home')"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('products')"><i class="fas fa-shopping-basket"></i> Products</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('specials')"><i class="fas fa-tag"></i> Weekly Specials</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('location')"><i class="fas fa-map-marker-alt"></i> Store Location</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('about')"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('contact')"><i class="fas fa-phone"></i> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="homeSection">
+            <!-- Hero Slider -->
+            <div class="hero-slider" id="heroSlider">
+                <div class="slides-container" id="slidesContainer">
+                    <!-- Slides will be loaded dynamically -->
+                </div>
+                <div class="slider-nav">
+                    <button class="slider-btn" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="slider-dots" id="sliderDots">
+                    <!-- Dots will be added dynamically -->
+                </div>
+            </div>
+            
+            <!-- Promo Banner -->
+            <div class="promo-banner">
+                <div class="promo-content">
+                    <i class="fas fa-star"></i>
+                    <strong>FRESH PRODUCE DAILY</strong> | 
+                    <i class="fas fa-percentage"></i>
+                    <strong>WEEKLY SPECIALS</strong> with up to 50% off | 
+                    <i class="fas fa-car"></i>
+                    <strong>AMPLET PARKING</strong> available
+                </div>
+            </div>
+            
+            <!-- Featured Products -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Products</h2>
+                    <a href="#" class="btn btn-secondary" onclick="showSection('products')">
+                        View All Products <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="products-grid" id="featuredProducts">
+                    <!-- Featured products will be loaded dynamically -->
+                </div>
+            </section>
+            
+            <!-- Quick Info -->
+            <section class="section">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Fresh Produce</h3>
+                        <p>Locally sourced fruits and vegetables delivered daily</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>Quality Meats</h3>
+                        <p>Premium cuts of meat and poultry from trusted suppliers</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bread-slice"></i>
+                        </div>
+                        <h3>Daily Bakery</h3>
+                        <p>Freshly baked bread and pastries made daily</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Easy Access</h3>
+                        <p>Conveniently located in Chilanga with ample parking</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+        <!-- Products Section -->
+        <section class="section" id="productsSection" style="display: none;">
+            <div class="section-header">
+                <h2 class="section-title">Our Products</h2>
+                <select class="form-control" style="width: 200px;" id="categoryFilter" onchange="filterProducts()">
+                    <option value="">All Categories</option>
+                </select>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn btn-primary" id="loadMoreBtn" onclick="loadMoreProducts()">
+                    <i class="fas fa-plus"></i> Load More Products
+                </button>
+            </div>
+        </section>
+        
+        <!-- Specials Section -->
+        <section class="section" id="specialsSection" style="display: none;">
+            <div class="section-header">
+                <h2 class="section-title">Weekly Specials</h2>
+                <div style="background-color: var(--primary); color: white; padding: 8px 20px; border-radius: 30px; font-weight: 600;">
+                    <i class="fas fa-fire"></i> Limited Time Offers
+                </div>
+            </div>
+            
+            <div class="products-grid" id="specialsGrid">
+                <!-- Special products will be loaded dynamically -->
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background-color: #fff8e1; border-radius: 8px;">
+                <h3><i class="fas fa-clock"></i> Specials Valid This Week Only!</h3>
+                <p>Visit our store to take advantage of these amazing deals. Offers valid while stocks last.</p>
+            </div>
+        </section>
+        
+        <!-- Location Section -->
+        <section class="store-location" id="locationSection" style="display: none;">
+            <div class="location-container">
+                <div class="section-header">
+                    <h2 class="section-title" style="color: white;">Our Store Location</h2>
+                </div>
+                
+                <div class="location-info">
+                    <h3>Kavency Super Market - Chilanga</h3>
+                    <p>Located conveniently at the Post Office in Chilanga, Lusaka. Easy access with ample parking available.</p>
+                    
+                    <!-- Google Maps Container -->
+                    <div class="google-map-container">
+                        <div id="googleMap"></div>
+                        <div class="map-overlay">
+                            <button class="directions-btn" onclick="openGoogleMaps()">
+                                <i class="fas fa-directions"></i> Get Directions
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="location-details">
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Post Office Building<br>Chilanga, Lusaka<br>Zambia</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Opening Hours</h4>
+                                <p>Monday - Sunday: 7:00 AM - 9:00 PM<br>Public Holidays: 8:00 AM - 8:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Contact</h4>
+                                <p>Phone: +260 211 123456<br>Email: info@kavency.co.zm</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <div class="detail-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div>
+                                <h4>Parking</h4>
+                                <p>Ample free parking available<br>Disabled parking spaces provided</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section class="section" id="aboutSection" style="display: none;">
+            <div class="section-header">
+                <h2 class="section-title">About Kavency Super Market</h2>
+            </div>
+            
+            <div style="background-color: white; padding: 40px; border-radius: 8px; box-shadow: var(--box-shadow); margin-bottom: 40px;">
+                <h3 style="color: var(--primary); margin-bottom: 20px;">Our Story</h3>
+                <p style="font-size: 18px; color: var(--gray); margin-bottom: 30px; line-height: 1.8;">
+                    Founded in 2010, Kavency Super Market has been serving the Chilanga community with quality groceries and exceptional customer service. 
+                    We believe in providing fresh, high-quality products at affordable prices. Our commitment to quality and community has made us a trusted 
+                    name in Lusaka's grocery retail sector.
+                </p>
+                
+                <h3 style="color: var(--primary); margin-bottom: 20px;">Our Values</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>Quality First</h4>
+                        <p>We source only the best products from trusted suppliers</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Customer Focus</h4>
+                        <p>Your satisfaction is our top priority</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h4>Freshness Guaranteed</h4>
+                        <p>Daily deliveries ensure maximum freshness</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Community Support</h4>
+                        <p>Supporting local farmers and producers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="section" id="contactSection" style="display: none;">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 20px;">Get in Touch</h3>
+                    <p style="color: var(--gray); margin-bottom: 30px;">
+                        Have questions or feedback? We'd love to hear from you. Fill out the form and we'll get back to you as soon as possible.
+                    </p>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Full Name *</label>
+                        <input type="text" class="form-control" id="contactName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Email Address *</label>
+                        <input type="email" class="form-control" id="contactEmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="contactPhone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Subject *</label>
+                        <input type="text" class="form-control" id="contactSubject" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Message *</label>
+                        <textarea class="form-control" id="contactMessage" required></textarea>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="submitContactForm()">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </div>
+                
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 20px;">Contact Information</h3>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="margin-bottom: 10px;"><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 10px;"></i> Address</h4>
+                        <p>Post Office Building<br>Chilanga, Lusaka<br>Zambia</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="margin-bottom: 10px;"><i class="fas fa-phone" style="color: var(--primary); margin-right: 10px;"></i> Phone</h4>
+                        <p>+260 211 123456<br>+260 966 123456</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h4 style="margin-bottom: 10px;"><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> Email</h4>
+                        <p>info@kavency.co.zm<br>support@kavency.co.zm</p>
+                    </div>
+                    
+                    <div>
+                        <h4 style="margin-bottom: 10px;"><i class="fas fa-clock" style="color: var(--primary); margin-right: 10px;"></i> Business Hours</h4>
+                        <p>Monday - Sunday: 7:00 AM - 9:00 PM<br>Public Holidays: 8:00 AM - 8:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Kavency Super Market</h3>
+                <p style="color: #ddd; margin-bottom: 20px; line-height: 1.6;">Your trusted grocery store in Chilanga, Lusaka since 2010. Fresh produce, quality meats, and pantry essentials.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="showSection('home')"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#" onclick="showSection('products')"><i class="fas fa-chevron-right"></i> Products</a></li>
+                    <li><a href="#" onclick="showSection('specials')"><i class="fas fa-chevron-right"></i> Weekly Specials</a></li>
+                    <li><a href="#" onclick="showSection('location')"><i class="fas fa-chevron-right"></i> Store Location</a></li>
+                    <li><a href="#" onclick="showSection('about')"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#" onclick="showSection('contact')"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Post Office Building, Chilanga, Lusaka</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+260 211 123456</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@kavency.co.zm</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Sun: 7:00 AM - 9:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Kavency Super Market. All rights reserved. | Designed for Chilanga Community</p>
+        </div>
+    </footer>
+
+    <!-- Hidden Admin Link (Only visible if you know where to look) -->
+    <a href="#" class="secret-admin-link" onclick="openAdminLogin()" title="Admin Access">
+        <i class="fas fa-lock"></i>
+    </a>
+
+    <!-- Admin Login Modal -->
+    <div class="modal" id="adminLoginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Admin Login</h2>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="form-label">Admin Password</label>
+                    <input type="password" class="form-control" id="adminPassword" placeholder="Enter admin password" autocomplete="off">
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 20px;" onclick="loginAdmin()">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </button>
+                <p style="text-align: center; margin-top: 15px; font-size: 12px; color: var(--gray);">
+                    Contact system administrator for access
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer"></div>
+
+    <!-- Load Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0h73pSoqDq7P0Ty5W-QTZ4H8f6R6Q6Yk&callback=initGoogleMap" async defer></script>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // ==================== GLOBAL VARIABLES ====================
+        let products = [];
+        let categories = [];
+        let slides = [];
+        let currentSection = 'home';
+        let productsDisplayed = 0;
+        const productsPerPage = 8;
+        let currentSlide = 0;
+        let slideInterval;
+        let googleMap = null;
+
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load data from localStorage
+            loadProducts();
+            loadCategories();
+            loadSlides();
+            
+            // Show home section
+            showSection('home');
+            
+            // Initialize slider
+            initSlider();
+            
+            // Load category filter
+            loadCategoryFilter();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Display initial content
+            displayFeaturedProducts();
+            displayAllProducts();
+            displaySpecialProducts();
+        });
+
+        // ==================== SLIDER FUNCTIONS ====================
+        function loadSlides() {
+            const savedSlides = localStorage.getItem('kavency_slides');
+            if (savedSlides) {
+                slides = JSON.parse(savedSlides);
+            } else {
+                // Default slides
+                slides = [
+                    {
+                        id: 'slide1',
+                        title: 'Fresh Groceries at Kavency',
+                        description: 'Your one-stop shop for fresh produce, quality meats, and pantry essentials in Chilanga.',
+                        image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                        active: true
+                    },
+                    {
+                        id: 'slide2',
+                        title: 'Weekly Specials',
+                        description: 'Check out our amazing weekly deals with discounts up to 50% on selected items.',
+                        image: 'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                        active: true
+                    },
+                    {
+                        id: 'slide3',
+                        title: 'Quality Guaranteed',
+                        description: 'We source only the finest products from trusted local suppliers and farmers.',
+                        image: 'https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80',
+                        active: true
+                    }
+                ];
+                localStorage.setItem('kavency_slides', JSON.stringify(slides));
+            }
+        }
+
+        function initSlider() {
+            const slidesContainer = document.getElementById('slidesContainer');
+            const dotsContainer = document.getElementById('sliderDots');
+
+            if (!slidesContainer || !dotsContainer) return;
+
+            slidesContainer.innerHTML = '';
+            dotsContainer.innerHTML = '';
+
+            const activeSlides = slides.filter(slide => slide.active);
+
+            if (activeSlides.length === 0) {
+                // Create a default slide if no active slides
+                const slideElement = document.createElement('div');
+                slideElement.className = 'slide';
+                slideElement.style.backgroundImage = `url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')`;
+                slideElement.innerHTML = `
+                    <div class="slide-content">
+                        <h2>Welcome to Kavency Super Market</h2>
+                        <p>Your trusted grocery store in Chilanga, Lusaka</p>
+                    </div>
+                `;
+                slidesContainer.appendChild(slideElement);
+
+                const dot = document.createElement('div');
+                dot.className = 'dot active';
+                dot.onclick = () => goToSlide(0);
+                dotsContainer.appendChild(dot);
+            } else {
+                activeSlides.forEach((slide, index) => {
+                    // Create slide
+                    const slideElement = document.createElement('div');
+                    slideElement.className = 'slide';
+                    slideElement.style.backgroundImage = `url('${slide.image}')`;
+                    
+                    slideElement.innerHTML = `
+                        <div class="slide-content">
+                            <h2>${slide.title}</h2>
+                            <p>${slide.description}</p>
+                        </div>
+                    `;
+                    
+                    slidesContainer.appendChild(slideElement);
+
+                    // Create dot
+                    const dot = document.createElement('div');
+                    dot.className = `dot ${index === 0 ? 'active' : ''}`;
+                    dot.onclick = () => goToSlide(index);
+                    dotsContainer.appendChild(dot);
+                });
+            }
+
+            // Start auto-slide
+            startAutoSlide();
+        }
+
+        function goToSlide(index) {
+            const slidesContainer = document.getElementById('slidesContainer');
+            const dots = document.querySelectorAll('.dot');
+            
+            if (!slidesContainer) return;
+            
+            currentSlide = index;
+            slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+            
+            // Reset auto-slide timer
+            restartAutoSlide();
+        }
+
+        function nextSlide() {
+            const slides = document.querySelectorAll('.slide');
+            if (slides.length === 0) return;
+            
+            currentSlide = (currentSlide + 1) % slides.length;
+            goToSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            const slides = document.querySelectorAll('.slide');
+            if (slides.length === 0) return;
+            
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            goToSlide(currentSlide);
+        }
+
+        function startAutoSlide() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(slideInterval);
+        }
+
+        function restartAutoSlide() {
+            stopAutoSlide();
+            startAutoSlide();
+        }
+
+        // ==================== DATA LOADING ====================
+        function loadProducts() {
+            try {
+                const savedProducts = localStorage.getItem('kavency_products');
+                if (savedProducts) {
+                    products = JSON.parse(savedProducts);
+                } else {
+                    loadDefaultProducts();
+                }
+            } catch (error) {
+                console.error('Error loading products:', error);
+                loadDefaultProducts();
+            }
+        }
+
+        function loadDefaultProducts() {
+            products = [
+                {
+                    id: 'P001',
+                    name: 'Fresh Tomatoes (1kg)',
+                    category: 'cat1',
+                    price: 12.99,
+                    stock: 45,
+                    description: 'Locally grown, ripe tomatoes from Zambian farms.',
+                    sku: 'TOM-001',
+                    weight: 1.0,
+                    discount: 10,
+                    featured: 'yes',
+                    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                },
+                {
+                    id: 'P002',
+                    name: 'Chicken Breasts (1kg)',
+                    category: 'cat2',
+                    price: 45.99,
+                    stock: 22,
+                    description: 'Premium skinless, boneless chicken breasts.',
+                    sku: 'CHK-001',
+                    weight: 1.0,
+                    discount: 0,
+                    featured: 'yes',
+                    image: 'https://images.unsplash.com/photo-1621996346565-e3dbc353d2a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                },
+                {
+                    id: 'P003',
+                    name: 'Fresh Milk (2L)',
+                    category: 'cat3',
+                    price: 18.50,
+                    stock: 30,
+                    description: 'Full cream pasteurized milk.',
+                    sku: 'MLK-001',
+                    weight: 2.0,
+                    discount: 5,
+                    featured: 'yes',
+                    image: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                },
+                {
+                    id: 'P004',
+                    name: 'Brown Bread',
+                    category: 'cat4',
+                    price: 8.99,
+                    stock: 25,
+                    description: 'Freshly baked whole wheat brown bread.',
+                    sku: 'BRD-001',
+                    weight: 0.5,
+                    discount: 15,
+                    featured: 'yes',
+                    image: 'https://images.unsplash.com/photo-1608190003443-86ab6a3e21a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                },
+                {
+                    id: 'P005',
+                    name: 'Fresh Apples (1kg)',
+                    category: 'cat1',
+                    price: 15.99,
+                    stock: 30,
+                    description: 'Crisp and juicy apples from South Africa.',
+                    sku: 'APL-001',
+                    weight: 1.0,
+                    discount: 0,
+                    featured: 'yes',
+                    image: 'https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                },
+                {
+                    id: 'P006',
+                    name: 'Basmati Rice (5kg)',
+                    category: 'cat5',
+                    price: 65.99,
+                    stock: 18,
+                    description: 'Premium quality basmati rice.',
+                    sku: 'RCE-001',
+                    weight: 5.0,
+                    discount: 20,
+                    featured: 'yes',
+                    image: 'https://images.unsplash.com/photo-1592921877374-9d4aad2c00c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                },
+                {
+                    id: 'P007',
+                    name: 'Cooking Oil (2L)',
+                    category: 'cat6',
+                    price: 42.50,
+                    stock: 32,
+                    description: 'Pure sunflower cooking oil.',
+                    sku: 'OIL-001',
+                    weight: 2.0,
+                    discount: 10,
+                    featured: 'no',
+                    image: 'https://images.unsplash.com/photo-1533050487297-09b450131914?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                },
+                {
+                    id: 'P008',
+                    name: 'Eggs (Tray of 30)',
+                    category: 'cat3',
+                    price: 35.99,
+                    stock: 15,
+                    description: 'Fresh farm eggs.',
+                    sku: 'EGG-001',
+                    weight: 1.5,
+                    discount: 0,
+                    featured: 'yes',
+                    image: 'https://images.unsplash.com/photo-1506976785307-8732e854ad03?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+                }
+            ];
+            localStorage.setItem('kavency_products', JSON.stringify(products));
+        }
+
+        function loadCategories() {
+            try {
+                const savedCategories = localStorage.getItem('kavency_categories');
+                if (savedCategories) {
+                    categories = JSON.parse(savedCategories);
+                } else {
+                    loadDefaultCategories();
+                }
+            } catch (error) {
+                console.error('Error loading categories:', error);
+                loadDefaultCategories();
+            }
+        }
+
+        function loadDefaultCategories() {
+            categories = [
+                { id: 'cat1', name: 'Fresh Produce', description: 'Fruits, vegetables, herbs & more', productCount: 156 },
+                { id: 'cat2', name: 'Meat & Seafood', description: 'Quality cuts, poultry & fresh fish', productCount: 89 },
+                { id: 'cat3', name: 'Dairy & Eggs', description: 'Milk, cheese, yogurt & fresh eggs', productCount: 67 },
+                { id: 'cat4', name: 'Bakery', description: 'Fresh bread, cakes & pastries', productCount: 45 },
+                { id: 'cat5', name: 'Pantry Staples', description: 'Rice, pasta, grains & spices', productCount: 112 },
+                { id: 'cat6', name: 'Household', description: 'Cleaning and household items', productCount: 203 }
+            ];
+            localStorage.setItem('kavency_categories', JSON.stringify(categories));
+        }
+
+        // ==================== NAVIGATION FUNCTIONS ====================
+        function showSection(sectionId) {
+            try {
+                // Hide all sections
+                const sections = ['home', 'products', 'specials', 'location', 'about', 'contact'];
+                sections.forEach(id => {
+                    const section = document.getElementById(id + 'Section');
+                    if (section) section.style.display = 'none';
+                });
+                
+                // Update navigation
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Show selected section
+                const targetSection = document.getElementById(sectionId + 'Section');
+                if (targetSection) {
+                    targetSection.style.display = 'block';
+                }
+                
+                // Add active class to navigation link
+                const navLink = document.querySelector(`.nav-link[onclick*="${sectionId}"]`);
+                if (navLink) {
+                    navLink.classList.add('active');
+                }
+                
+                // Update current section
+                currentSection = sectionId;
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                // Close mobile menu
+                const navLinks = document.getElementById('navLinks');
+                if (navLinks) navLinks.classList.remove('active');
+                
+                // Initialize Google Maps if showing location
+                if (sectionId === 'location' && !googleMap) {
+                    initGoogleMap();
+                }
+            } catch (error) {
+                console.error('Error showing section:', error);
+                showNotification('Error loading section', 'error');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            if (navLinks) {
+                navLinks.classList.toggle('active');
+            }
+        }
+
+        // ==================== GOOGLE MAPS FUNCTIONS ====================
+        function initGoogleMap() {
+            try {
+                // Coordinates for Post Office, Chilanga, Lusaka
+                const chilangaCoords = { lat: -15.5535, lng: 28.3214 };
+                
+                // Create map
+                const mapOptions = {
+                    center: chilangaCoords,
+                    zoom: 15,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    styles: [
+                        {
+                            "featureType": "all",
+                            "elementType": "labels.text.fill",
+                            "stylers": [{"color": "#333333"}]
+                        }
+                    ]
+                };
+                
+                googleMap = new google.maps.Map(document.getElementById('googleMap'), mapOptions);
+                
+                // Add marker
+                const marker = new google.maps.Marker({
+                    position: chilangaCoords,
+                    map: googleMap,
+                    title: 'Kavency Super Market',
+                    icon: {
+                        url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                    }
+                });
+                
+                // Add info window
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `
+                        <div style="padding: 10px;">
+                            <h3 style="color: var(--primary); margin: 0 0 10px 0;">Kavency Super Market</h3>
+                            <p style="margin: 0 0 5px 0;"><strong>Address:</strong> Post Office Building, Chilanga, Lusaka</p>
+                            <p style="margin: 0 0 5px 0;"><strong>Hours:</strong> 7:00 AM - 9:00 PM</p>
+                            <p style="margin: 0;"><strong>Phone:</strong> +260 211 123456</p>
+                        </div>
+                    `
+                });
+                
+                marker.addListener('click', () => {
+                    infoWindow.open(googleMap, marker);
+                });
+                
+                // Open info window by default
+                infoWindow.open(googleMap, marker);
+                
+            } catch (error) {
+                console.error('Error initializing Google Map:', error);
+                showNotification('Error loading map. Please check your internet connection.', 'error');
+                
+                // Fallback to OpenStreetMap
+                const fallbackMap = document.getElementById('storeMap');
+                if (fallbackMap) {
+                    fallbackMap.style.display = 'block';
+                    initLeafletMap();
+                }
+            }
+        }
+
+        function initLeafletMap() {
+            try {
+                // Coordinates for Post Office, Chilanga, Lusaka
+                const chilangaCoords = [-15.5535, 28.3214];
+                
+                // Initialize map
+                const map = L.map('storeMap').setView(chilangaCoords, 15);
+                
+                // Add OpenStreetMap tiles
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+                
+                // Add marker
+                L.marker(chilangaCoords)
+                    .addTo(map)
+                    .bindPopup(`
+                        <b>Kavency Super Market</b><br>
+                        Post Office Building<br>
+                        Chilanga, Lusaka<br>
+                        <small>Open: 7:00 AM - 9:00 PM</small>
+                    `)
+                    .openPopup();
+                
+            } catch (error) {
+                console.error('Error initializing fallback map:', error);
+            }
+        }
+
+        function openGoogleMaps() {
+            const address = encodeURIComponent('Post Office Building, Chilanga, Lusaka, Zambia');
+            window.open(`https://www.google.com/maps/dir/?api=1&destination=${address}`, '_blank');
+        }
+
+        // ==================== PRODUCT DISPLAY FUNCTIONS ====================
+        function displayFeaturedProducts() {
+            try {
+                const featuredProducts = products.filter(p => p.featured === 'yes').slice(0, 4);
+                const grid = document.getElementById('featuredProducts');
+                
+                if (!grid) return;
+                
+                grid.innerHTML = '';
+                
+                if (featuredProducts.length === 0) {
+                    grid.innerHTML = `
+                        <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                            <i class="fas fa-shopping-basket" style="font-size: 60px; color: #ddd; margin-bottom: 20px;"></i>
+                            <h3 style="color: #666; margin-bottom: 10px;">No featured products</h3>
+                            <p style="color: #999;">Check back soon for our featured items</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                featuredProducts.forEach(product => {
+                    const category = categories.find(c => c.id === product.category) || { name: 'Uncategorized' };
+                    const discountedPrice = product.discount > 0 ? product.price * (1 - product.discount / 100) : null;
+                    const stockStatus = product.stock > 10 ? 'in-stock' : 'low-stock';
+                    const stockText = product.stock > 10 ? 'In Stock' : 'Low Stock';
+                    
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        <div class="product-image">
+                            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">${category.name}</span>
+                            <h3 class="product-name">${product.name}</h3>
+                            <div class="product-price">
+                                K${discountedPrice ? discountedPrice.toFixed(2) : product.price.toFixed(2)}
+                                ${discountedPrice ? `<small style="color: var(--gray); text-decoration: line-through; margin-left: 5px;">K${product.price.toFixed(2)}</small>` : ''}
+                            </div>
+                            <div class="product-status ${stockStatus}">${stockText}</div>
+                        </div>
+                    `;
+                    grid.appendChild(productCard);
+                });
+            } catch (error) {
+                console.error('Error displaying featured products:', error);
+            }
+        }
+
+        function displayAllProducts() {
+            try {
+                const grid = document.getElementById('productsGrid');
+                if (!grid) return;
+                
+                grid.innerHTML = '';
+                
+                productsDisplayed = Math.min(products.length, productsPerPage);
+                
+                if (products.length === 0) {
+                    grid.innerHTML = `
+                        <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                            <i class="fas fa-shopping-basket" style="font-size: 60px; color: #ddd; margin-bottom: 20px;"></i>
+                            <h3 style="color: #666; margin-bottom: 10px;">No products available</h3>
+                            <p style="color: #999;">Check back soon for our product listings</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                products.slice(0, productsDisplayed).forEach(product => {
+                    const category = categories.find(c => c.id === product.category) || { name: 'Uncategorized' };
+                    const discountedPrice = product.discount > 0 ? product.price * (1 - product.discount / 100) : null;
+                    const stockStatus = product.stock > 10 ? 'in-stock' : 'low-stock';
+                    const stockText = product.stock > 10 ? 'In Stock' : 'Low Stock';
+                    
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        <div class="product-image">
+                            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">${category.name}</span>
+                            <h3 class="product-name">${product.name}</h3>
+                            <div class="product-price">
+                                K${discountedPrice ? discountedPrice.toFixed(2) : product.price.toFixed(2)}
+                                ${discountedPrice ? `<small style="color: var(--gray); text-decoration: line-through; margin-left: 5px;">K${product.price.toFixed(2)}</small>` : ''}
+                            </div>
+                            <div class="product-status ${stockStatus}">${stockText}</div>
+                        </div>
+                    `;
+                    grid.appendChild(productCard);
+                });
+                
+                // Show/hide load more button
+                const loadMoreBtn = document.getElementById('loadMoreBtn');
+                if (loadMoreBtn) {
+                    if (products.length <= productsDisplayed) {
+                        loadMoreBtn.style.display = 'none';
+                    } else {
+                        loadMoreBtn.style.display = 'inline-block';
+                    }
+                }
+            } catch (error) {
+                console.error('Error displaying all products:', error);
+                showNotification('Error loading products', 'error');
+            }
+        }
+
+        function displaySpecialProducts() {
+            try {
+                const specialProducts = products.filter(p => p.discount > 0);
+                const grid = document.getElementById('specialsGrid');
+                
+                if (!grid) return;
+                
+                grid.innerHTML = '';
+                
+                if (specialProducts.length === 0) {
+                    grid.innerHTML = `
+                        <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                            <i class="fas fa-tag" style="font-size: 60px; color: #ddd; margin-bottom: 20px;"></i>
+                            <h3 style="color: #666; margin-bottom: 10px;">No specials available</h3>
+                            <p style="color: #999;">Check back soon for our weekly specials</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                specialProducts.forEach(product => {
+                    const category = categories.find(c => c.id === product.category) || { name: 'Uncategorized' };
+                    const discountedPrice = product.price * (1 - product.discount / 100);
+                    const stockStatus = product.stock > 10 ? 'in-stock' : 'low-stock';
+                    const stockText = product.stock > 10 ? 'In Stock' : 'Low Stock';
+                    
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        <div class="product-image">
+                            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">${category.name}</span>
+                            <h3 class="product-name">${product.name}</h3>
+                            <div class="product-price">
+                                K${discountedPrice.toFixed(2)}
+                                <small style="color: var(--gray); text-decoration: line-through; margin-left: 5px;">K${product.price.toFixed(2)}</small>
+                            </div>
+                            <div class="product-status ${stockStatus}">${stockText}</div>
+                            <div style="background-color: #ffebee; color: #c62828; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-top: 10px; display: inline-block;">
+                                Save ${product.discount}%
+                            </div>
+                        </div>
+                    `;
+                    grid.appendChild(productCard);
+                });
+            } catch (error) {
+                console.error('Error displaying special products:', error);
+                showNotification('Error loading specials', 'error');
+            }
+        }
+
+        function filterProducts() {
+            try {
+                const filter = document.getElementById('categoryFilter');
+                const selectedCategory = filter ? filter.value : '';
+                
+                const filteredProducts = selectedCategory ? 
+                    products.filter(p => p.category === selectedCategory) : 
+                    products;
+                
+                const grid = document.getElementById('productsGrid');
+                if (!grid) return;
+                
+                grid.innerHTML = '';
+                
+                productsDisplayed = Math.min(filteredProducts.length, productsPerPage);
+                
+                if (filteredProducts.length === 0) {
+                    grid.innerHTML = `
+                        <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                            <i class="fas fa-search" style="font-size: 60px; color: #ddd; margin-bottom: 20px;"></i>
+                            <h3 style="color: #666; margin-bottom: 10px;">No products found</h3>
+                            <p style="color: #999;">Try selecting a different category</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                filteredProducts.slice(0, productsDisplayed).forEach(product => {
+                    const category = categories.find(c => c.id === product.category) || { name: 'Uncategorized' };
+                    const discountedPrice = product.discount > 0 ? product.price * (1 - product.discount / 100) : null;
+                    const stockStatus = product.stock > 10 ? 'in-stock' : 'low-stock';
+                    const stockText = product.stock > 10 ? 'In Stock' : 'Low Stock';
+                    
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        <div class="product-image">
+                            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">${category.name}</span>
+                            <h3 class="product-name">${product.name}</h3>
+                            <div class="product-price">
+                                K${discountedPrice ? discountedPrice.toFixed(2) : product.price.toFixed(2)}
+                                ${discountedPrice ? `<small style="color: var(--gray); text-decoration: line-through; margin-left: 5px;">K${product.price.toFixed(2)}</small>` : ''}
+                            </div>
+                            <div class="product-status ${stockStatus}">${stockText}</div>
+                        </div>
+                    `;
+                    grid.appendChild(productCard);
+                });
+                
+                // Show/hide load more button
+                const loadMoreBtn = document.getElementById('loadMoreBtn');
+                if (loadMoreBtn) {
+                    if (filteredProducts.length <= productsDisplayed) {
+                        loadMoreBtn.style.display = 'none';
+                    } else {
+                        loadMoreBtn.style.display = 'inline-block';
+                    }
+                }
+            } catch (error) {
+                console.error('Error filtering products:', error);
+                showNotification('Error filtering products', 'error');
+            }
+        }
+
+        function loadMoreProducts() {
+            try {
+                const filter = document.getElementById('categoryFilter');
+                const selectedCategory = filter ? filter.value : '';
+                
+                const filteredProducts = selectedCategory ? 
+                    products.filter(p => p.category === selectedCategory) : 
+                    products;
+                
+                const grid = document.getElementById('productsGrid');
+                if (!grid) return;
+                
+                const nextProducts = filteredProducts.slice(productsDisplayed, productsDisplayed + productsPerPage);
+                
+                nextProducts.forEach(product => {
+                    const category = categories.find(c => c.id === product.category) || { name: 'Uncategorized' };
+                    const discountedPrice = product.discount > 0 ? product.price * (1 - product.discount / 100) : null;
+                    const stockStatus = product.stock > 10 ? 'in-stock' : 'low-stock';
+                    const stockText = product.stock > 10 ? 'In Stock' : 'Low Stock';
+                    
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        <div class="product-image">
+                            <img src="${product.image}" alt="${product.name}" onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">${category.name}</span>
+                            <h3 class="product-name">${product.name}</h3>
+                            <div class="product-price">
+                                K${discountedPrice ? discountedPrice.toFixed(2) : product.price.toFixed(2)}
+                                ${discountedPrice ? `<small style="color: var(--gray); text-decoration: line-through; margin-left: 5px;">K${product.price.toFixed(2)}</small>` : ''}
+                            </div>
+                            <div class="product-status ${stockStatus}">${stockText}</div>
+                        </div>
+                    `;
+                    grid.appendChild(productCard);
+                });
+                
+                productsDisplayed += nextProducts.length;
+                
+                // Hide load more button if no more products
+                const loadMoreBtn = document.getElementById('loadMoreBtn');
+                if (loadMoreBtn && productsDisplayed >= filteredProducts.length) {
+                    loadMoreBtn.style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Error loading more products:', error);
+                showNotification('Error loading more products', 'error');
+            }
+        }
+
+        function loadCategoryFilter() {
+            try {
+                const filter = document.getElementById('categoryFilter');
+                if (!filter) return;
+                
+                filter.innerHTML = '<option value="">All Categories</option>';
+                
+                categories.forEach(category => {
+                    filter.innerHTML += `<option value="${category.id}">${category.name}</option>`;
+                });
+            } catch (error) {
+                console.error('Error loading category filter:', error);
+            }
+        }
+
+        // ==================== CONTACT FORM FUNCTIONS ====================
+        function submitContactForm() {
+            try {
+                const name = document.getElementById('contactName').value.trim();
+                const email = document.getElementById('contactEmail').value.trim();
+                const phone = document.getElementById('contactPhone').value.trim();
+                const subject = document.getElementById('contactSubject').value.trim();
+                const message = document.getElementById('contactMessage').value.trim();
+                
+                // Validation
+                if (!name || !email || !subject || !message) {
+                    showNotification('Please fill in all required fields', 'error');
+                    return;
+                }
+                
+                if (!validateEmail(email)) {
+                    showNotification('Please enter a valid email address', 'error');
+                    return;
+                }
+                
+                // Create contact object
+                const contact = {
+                    id: 'CONTACT_' + Date.now(),
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    subject: subject,
+                    message: message,
+                    date: new Date().toISOString(),
+                    status: 'unread'
+                };
+                
+                // Save to localStorage
+                let contacts = JSON.parse(localStorage.getItem('kavency_contacts')) || [];
+                contacts.push(contact);
+                localStorage.setItem('kavency_contacts', JSON.stringify(contacts));
+                
+                // Clear form
+                document.getElementById('contactName').value = '';
+                document.getElementById('contactEmail').value = '';
+                document.getElementById('contactPhone').value = '';
+                document.getElementById('contactSubject').value = '';
+                document.getElementById('contactMessage').value = '';
+                
+                // Show success message
+                showNotification('Thank you for your message! We will contact you soon.', 'success');
+                
+            } catch (error) {
+                console.error('Error submitting contact form:', error);
+                showNotification('Error submitting form. Please try again.', 'error');
+            }
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        // ==================== ADMIN AUTHENTICATION FUNCTIONS ====================
+        function openAdminLogin() {
+            const modal = document.getElementById('adminLoginModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                document.getElementById('adminPassword').focus();
+            }
+        }
+
+        function loginAdmin() {
+            const password = document.getElementById('adminPassword').value;
+            const savedPassword = localStorage.getItem('kavency_admin_password') || 'kavency2023';
+            
+            if (password === savedPassword) {
+                // Set session flag
+                sessionStorage.setItem('kavency_admin_session', 'true');
+                
+                // Close modal
+                document.getElementById('adminLoginModal').style.display = 'none';
+                document.getElementById('adminPassword').value = '';
+                
+                // Redirect to admin panel
+                window.open('Admin.html', '_blank');
+            } else {
+                showNotification('Invalid password', 'error');
+                document.getElementById('adminPassword').value = '';
+                document.getElementById('adminPassword').focus();
+            }
+        }
+
+        // ==================== UTILITY FUNCTIONS ====================
+        function performSearch() {
+            try {
+                const searchInput = document.getElementById('searchInput');
+                if (!searchInput) return;
+                
+                const searchTerm = searchInput.value.trim();
+                if (searchTerm) {
+                    showSection('products');
+                    
+                    // Filter products based on search term
+                    const filteredProducts = products.filter(product => 
+                        product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        product.description.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+                    
+                    // Update display
+                    const grid = document.getElementById('productsGrid');
+                    if (grid) {
+                        grid.innerHTML = '';
+                        
+                        if (filteredProducts.length === 0) {
+                            grid.innerHTML = `
+                                <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                                    <i class="fas fa-search" style="font-size: 60px; color: #ddd; margin-bottom: 20px;"></i>
+                                    <h3 style="color: #666; margin-bottom: 10px;">No products found</h3>
+                                    <p style="color: #999;">Try a different search term</p>
+                                </div>
+                            `;
+                        } else {
+                            filteredProducts.forEach(product => {
+                                const category = categories.find(c => c.id === product.category) || { name: 'Uncategorized' };
+                                const discountedPrice = product.discount > 0 ? product.price * (1 - product.discount / 100) : null;
+                                const stockStatus = product.stock > 10 ? 'in-stock' : 'low-stock';
+                                const stockText = product.stock > 10 ? 'In Stock' : 'Low Stock';
+                                
+                                const productCard = document.createElement('div');
+                                productCard.className = 'product-card';
+                                productCard.innerHTML = `
+                                    <div class="product-image">
+                                        <img src="${product.image}" alt="${product.name}" onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                                    </div>
+                                    <div class="product-info">
+                                        <span class="product-category">${category.name}</span>
+                                        <h3 class="product-name">${product.name}</h3>
+                                        <div class="product-price">
+                                            K${discountedPrice ? discountedPrice.toFixed(2) : product.price.toFixed(2)}
+                                            ${discountedPrice ? `<small style="color: var(--gray); text-decoration: line-through; margin-left: 5px;">K${product.price.toFixed(2)}</small>` : ''}
+                                        </div>
+                                        <div class="product-status ${stockStatus}">${stockText}</div>
+                                    </div>
+                                `;
+                                grid.appendChild(productCard);
+                            });
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('Error performing search:', error);
+                showNotification('Error performing search', 'error');
+            }
+        }
+
+        function showNotification(message, type) {
+            try {
+                const container = document.getElementById('notificationContainer');
+                if (!container) return;
+                
+                const notification = document.createElement('div');
+                notification.className = `notification ${type}`;
+                notification.textContent = message;
+                
+                container.appendChild(notification);
+                
+                // Remove notification after 5 seconds
+                setTimeout(() => {
+                    notification.style.animation = 'slideOutRight 0.3s ease';
+                    setTimeout(() => {
+                        if (notification.parentNode) {
+                            container.removeChild(notification);
+                        }
+                    }, 300);
+                }, 5000);
+            } catch (error) {
+                console.error('Error showing notification:', error);
+            }
+        }
+
+        function setupEventListeners() {
+            try {
+                // Search input enter key
+                const searchInput = document.getElementById('searchInput');
+                if (searchInput) {
+                    searchInput.addEventListener('keypress', function(event) {
+                        if (event.key === 'Enter') {
+                            performSearch();
+                        }
+                    });
+                }
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    const navLinks = document.getElementById('navLinks');
+                    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+                    
+                    if (navLinks && navLinks.classList.contains('active') && 
+                        !navLinks.contains(event.target) && 
+                        !mobileMenuBtn.contains(event.target)) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+                
+                // Close modal when clicking outside
+                document.addEventListener('click', function(event) {
+                    const modal = document.getElementById('adminLoginModal');
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+                
+                // Close modal with Escape key
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape') {
+                        document.getElementById('adminLoginModal').style.display = 'none';
+                    }
+                });
+                
+                // Pause slider on hover
+                const slider = document.getElementById('heroSlider');
+                if (slider) {
+                    slider.addEventListener('mouseenter', stopAutoSlide);
+                    slider.addEventListener('mouseleave', startAutoSlide);
+                }
+            } catch (error) {
+                console.error('Error setting up event listeners:', error);
+            }
+        }
+    </script>
+</body>
+</html>
